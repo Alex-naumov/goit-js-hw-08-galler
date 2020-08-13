@@ -12,6 +12,7 @@ const closeModalButton = document.querySelector(
 gallery.addEventListener("click", handleImgClick);
 closeModalButton.addEventListener("click", closeModal);
 overlay.addEventListener("click", handleOverlayClick);
+
 const galleryList = galleryItems.map((item) => {
   const galleryItem = document.createElement("li");
   galleryItem.insertAdjacentHTML(
@@ -34,12 +35,12 @@ const galleryList = galleryItems.map((item) => {
 gallery.prepend(...galleryList);
 
 function handleImgClick(event) {
-  //event.preventDefault();
+  event.preventDefault();
   if (event.target === event.curentTarget) {
     return;
   }
-  lightbox__image.src = event.target.src;
-  lightbox__image.alt = event.target.getAtribute("alt");
+  lightbox__image.src = event.target.dataset.source;
+  lightbox__image.alt = event.target.getAttribute("alt");
 
   lightbox.classList.add("is-open");
   window.addEventListener("keydown", handleCloseModalEsc);
