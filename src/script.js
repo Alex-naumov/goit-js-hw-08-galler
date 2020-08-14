@@ -36,7 +36,7 @@ gallery.prepend(...galleryList);
 
 function handleImgClick(event) {
   event.preventDefault();
-  if (event.target === event.curentTarget) {
+  if (event.target === event.currentTarget) {
     return;
   }
   lightbox__image.src = event.target.dataset.source;
@@ -60,7 +60,7 @@ function handleOverlayClick(event) {
   if (event.target !== event.currentTarget) {
     return;
   }
-  console.log("hghgh");
+
   closeModal();
 }
 
